@@ -49,7 +49,7 @@ var svg = d3.select('body').append('svg')
 svg.append('image')
   .attr('width', mapWidth)
   .attr('height', mapHeight)
-  .attr('xlink:href', 'data/map.png');
+  .attr('xlink:href', 'map.png');
 
 function addLocation(x, y, id) {
   var locationGroup = svg.append('g')
@@ -134,7 +134,7 @@ d3.select("#sliderB").on("input", function() {
 });
 
 // Load software companies data
-d3.csv("data/data.csv").then(function(data) {
+d3.csv("data.csv").then(function(data) {
   // Convert latitude and longitude to pixel positions
   var companies = data.map(function(d) {
     var rating = parseFloat(d.Average_Rating);
