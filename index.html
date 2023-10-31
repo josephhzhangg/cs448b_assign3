@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bay Area Software Companies</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+  .company {
+    fill: gray;
+    stroke: none;
+  }
+
+  .company:hover {
+    fill: green;
+  }
+
+  #info-panel {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    width: 1000px;
+    max-height: 150px; /* Adjust as needed */
+    overflow-y: auto; /* Add scroll if content overflows */
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #software-name,
+  #average-rating {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+</style>
+
+<label for="sliderA">Radius for Location A:</label>
+<input type="range" id="sliderA" min="0" max="200" value="100">
+<br>
+<label for="sliderB">Radius for Location B:</label>
+<input type="range" id="sliderB" min="0" max="200" value="100">
+
+<div id="info-panel">
+  <h3>Company Information</h3>
+  <table>
+    <tr>
+      <td>Software Company Name:</td>
+      <td id="company-name">N/A</td>
+    </tr>
+    <tr>
+      <td>Average Rating:</td>
+      <td id="average-rating">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <label for="filterLetter">Filter companies starting with (comma separated):</label>
+  <input type="text" id="filterLetter" size="20" />
+  <button id="applyFilterBtn">Apply Filter</button>
+  <button id="undoFilterBtn">Undo Filter</button>
+</div>
+
+<div id="currentFilters">
+  <strong>Current Filters:</strong> <span id="filterList">None</span>
+</div>
+
+
+</head>
+
+
+
+<body>
+  <script src="app.js"></script>
+</body>
+
+</html>
